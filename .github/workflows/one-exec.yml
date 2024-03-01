@@ -1,9 +1,7 @@
 name: CI/CD
 
 on:
-   push: 
-     branches:
-        - II-2-Branch
+   workflow_dispatch: null
 
 jobs:
     builds:
@@ -31,18 +29,7 @@ jobs:
               mvn compile
               mvn test
               mvn package
+              ls
+              pwd
               cd ..
               sudo cp -r repo-new-jira/* /var/www/html/
-
-           - name: Uploading the artifact
-             uses: actions/upload-artifact@v3
-             with:
-               name: Package
-               path: /home/runner/work/repo-new-jira/repo-new-jira/target/
-           
-           - name: Deploying the web app
-             uses: peaceiris/actions-gh-pages@v3
-             with:
-                 github_token: ${{secrets.TOKEN}}
-                 publish_dir: /var/www/html
-                 publish_branch: gh-pages
