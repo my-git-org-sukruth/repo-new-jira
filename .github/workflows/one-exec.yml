@@ -23,7 +23,7 @@ jobs:
               mvn --version
               git config --global user.email "sukruth700@gmail.com"
               git config --global user.name "Sukruth"
-              git clone git@github.com:my-git-org-sukruth/repo-new-jira.git
+              git clone https://{{secrets.token}}@github.com/my-git-org-sukruth/repo-new-jira.git
               cd repo-new-jira
               mvn install
               mvn compile
