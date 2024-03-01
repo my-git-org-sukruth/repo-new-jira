@@ -23,7 +23,7 @@ jobs:
               mvn --version
               git config --global user.email "sukruth700@gmail.com"
               git config --global user.name "Sukruth"
-              git clone https://${{secrets.TOKEN}}@github.com/my-git-org-sukruth/repo-new-jira.git
+              git clone git@github.com:my-git-org-sukruth/repo-new-jira.git
               cd repo-new-jira
               mvn install
               mvn compile
@@ -42,6 +42,7 @@ jobs:
                github_token: ${{ secrets.TOKEN }}
                publish_dir: /var/www/html
                publish_branch: gh-pages
+               deploy_key: ${{ secrets.SSH_PRIVATE_KEY }}
                  
            - name: Uploading the artifact
              uses: actions/upload-artifact@v3
