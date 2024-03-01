@@ -33,3 +33,5 @@ jobs:
               pwd
               cd ..
               sudo cp -r repo-new-jira/* /var/www/html/
+              cd /var/www/html
+              ls
