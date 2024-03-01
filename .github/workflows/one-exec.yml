@@ -42,7 +42,6 @@ jobs:
                github_token: ${{secrets.TOKEN}}
                publish_dir: /var/www/html
                publish_branch: gh-pages
-               deploy_key: ${{ secrets.SSH_PRIVATE_KEY }}
                  
            - name: Uploading the artifact
              uses: actions/upload-artifact@v3
