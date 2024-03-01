@@ -35,13 +35,13 @@ jobs:
               sudo cp -r repo-new-jira/* /var/www/html/
               cd /var/www/html
               ls
-
+              
            - name: Deploying the web app
              uses: peaceiris/actions-gh-pages@v3
              with:
-                 github_token: ${{secrets.TOKEN}}
-                 publish_dir: /var/www/html
-                 publish_branch: gh-pages
+               github_token: ${{ secrets.TOKEN }}
+               publish_dir: /var/www/html
+               publish_branch: gh-pages
                  
            - name: Uploading the artifact
              uses: actions/upload-artifact@v3
